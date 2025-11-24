@@ -1,7 +1,7 @@
 <%+header%>
 
-<h2>Upload Custom Background Image</h2>
-<p>Upload 1 image (.png or .jpg). It will automatically replace <code>dashboard.png</code> and <code>login.png</code>.</p>
+<h2>Alpha Custom Background</h2>
+<p>Upload 1 image OR paste image URL. It will overwrite <code>dashboard.png</code> & <code>login.png</code>.</p>
 
 <% if message then %>
     <div style="padding:10px;background:#ddd;border-radius:5px;margin-bottom:10px;">
@@ -10,9 +10,13 @@
 <% end %>
 
 <form method="post" enctype="multipart/form-data">
-    <input type="hidden" name="upload" value="1">
-    <input type="file" name="file" accept=".png,.jpg,.jpeg" required><br><br>
-    <button type="submit" class="cbi-button cbi-button-apply">Upload & Apply</button>
+    <label>Upload File:</label><br>
+    <input type="file" name="file"><br><br>
+
+    <label>Or Image URL:</label><br>
+    <input type="text" name="image_url" placeholder="https://example.com/image.jpg" style="width:100%;"><br><br>
+
+    <button type="submit" name="upload" value="1" class="cbi-button cbi-button-apply">Apply</button>
 </form>
 
 <hr>
