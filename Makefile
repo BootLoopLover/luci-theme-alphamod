@@ -45,7 +45,7 @@ define Package/luci-theme-$(THEME_NAME)/install
 	$(CP) -a ./root/etc/config/* $(1)/etc/config/ 2>/dev/null || true
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/controller
 	$(CP) -a ./radu.lua $(1)/usr/lib/lua/luci/controller/radu.lua
-	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/view/radu
+	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/view
 	$(CP) -a ./radu.htm $(1)/usr/lib/lua/luci/view/radu.htm
 endef
 
