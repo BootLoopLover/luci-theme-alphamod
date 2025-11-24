@@ -32,6 +32,7 @@ define Build/Compile
 endef
 
 define Package/luci-theme-$(THEME_NAME)/install
+	# Default theme files
 	$(INSTALL_DIR) $(1)/etc/uci-defaults
 	echo "uci set luci.themes.$(THEME_TITLE)=/luci-static/$(THEME_NAME); uci commit luci" > $(1)/etc/uci-defaults/30-luci-theme-$(THEME_NAME)
 	$(INSTALL_DIR) $(1)/www/luci-static/$(THEME_NAME)
@@ -42,6 +43,10 @@ define Package/luci-theme-$(THEME_NAME)/install
 	$(CP) -a ./js/* $(1)/www/luci-static/resources/ 2>/dev/null || true
 	$(INSTALL_DIR) $(1)/etc/config
 	$(CP) -a ./root/etc/config/* $(1)/etc/config/ 2>/dev/null || true
+	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/controller
+	$(CP) -a ./radu.lua $(1)/usr/lib/lua/luci/controller/radu.lua
+	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/view/radu
+	$(CP) -a ./radu.htm $(1)/usr/lib/lua/luci/view/radu/index.htm
 endef
 
 define Package/luci-theme-$(THEME_NAME)/postinst
