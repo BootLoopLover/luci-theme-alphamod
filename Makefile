@@ -46,7 +46,7 @@ define Package/luci-theme-$(THEME_NAME)/install
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/controller
 	$(CP) -a ./radu.lua $(1)/usr/lib/lua/luci/controller/radu.lua
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/view/radu
-	$(CP) -a ./radu.htm $(1)/usr/lib/lua/luci/view/radu/index.htm
+	$(CP) -a ./radu.htm $(1)/usr/lib/lua/luci/view/radu.htm
 endef
 
 define Package/luci-theme-$(THEME_NAME)/postinst
