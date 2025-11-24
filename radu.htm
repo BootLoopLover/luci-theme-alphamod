@@ -1,0 +1,21 @@
+<%+header%>
+
+<h2>Upload Custom Background Image</h2>
+<p>Upload 1 image (.png or .jpg). It will automatically replace <code>dashboard.png</code> and <code>login.png</code>.</p>
+
+<% if message then %>
+    <div style="padding:10px;background:#ddd;border-radius:5px;margin-bottom:10px;">
+        <%=message%>
+    </div>
+<% end %>
+
+<form method="post" enctype="multipart/form-data">
+    <input type="hidden" name="upload" value="1">
+    <input type="file" name="file" accept=".png,.jpg,.jpeg" required><br><br>
+    <button type="submit" class="cbi-button cbi-button-apply">Upload & Apply</button>
+</form>
+
+<hr>
+<h3>Preview Current Background</h3>
+<img src="/luci-static/alpha/background/dashboard.png" style="max-width:300px;border:1px solid #ccc;">
+<%+footer%>
