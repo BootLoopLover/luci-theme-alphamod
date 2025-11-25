@@ -18,7 +18,7 @@ config navbar
 	option line '2'
 	option newtab 'No'
 	option icon '/www/luci-static/alpha/gaya/icon/navbar/terminal.png'
-	option address '/cgi-bin/luci/admin/system/ttyd'
+	option address '/cgi-bin/luci/admin/services/ttyd'
 
 config navbar
 	option name 'Open Clash'
@@ -26,15 +26,15 @@ config navbar
 	option line '3'
 	option newtab 'No'
 	option icon '/www/luci-static/alpha/gaya/icon/navbar/openclash.png'
-	option address '/cgi-bin/luci/admin/services/openclash'
+	option address '/cgi-bin/luci/admin/services/passwall2'
 
 config navbar
-	option name 'Passwall'
+	option name 'Neko'
 	option enable 'Enable'
 	option line '4'
 	option newtab 'No'
 	option icon '/www/luci-static/alpha/gaya/icon/navbar/neko.png'
-	option address '/cgi-bin/luci/admin/services/passwall'
+	option address '/cgi-bin/luci/admin/modem/luci-app-sms-tool-js'
 
 config navbar
 	option name 'Modem'
