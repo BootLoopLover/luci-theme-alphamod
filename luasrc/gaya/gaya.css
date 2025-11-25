@@ -177,9 +177,9 @@
  }
 
  :root {
- 	--main-color: #09c;
- 	--header-bg: #161624;
- 	--header-color: rgb(10, 10, 10);
+ 	--main-color: ;
+ 	--header-bg: ;
+ 	--header-color: ;
  	--bar-bg: #3f3f3f69;
  	--menu-bg-color: #fff;
  	--menu-color: #5f6368;
@@ -457,11 +457,11 @@
  	z-index: 2000;
  	float: left;
  	height: 4rem;
- 	transition: box-shadow 0.2s;
+ 	transition: ;
  	color: var(--header-color);
  	background: #2222359a;
- 	backdrop-filter: blur(10px);
- 	-webkit-backdrop-filter: blur(10px);
+ 	backdrop-filter: blur(0px);
+ 	-webkit-backdrop-filter: blur(0px);
  }
 
  header>.fill>.container {

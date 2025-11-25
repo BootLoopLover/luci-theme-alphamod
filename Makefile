@@ -20,7 +20,7 @@ define Package/luci-theme-$(THEME_NAME)
   CATEGORY:=LuCI
   SUBMENU:=9. Themes
   DEPENDS:=+libc
-  TITLE:=LuCi Theme For OpenWrt And Alpha OS ONLY - $(THEME_TITLE)
+  TITLE:=LuCi Theme For OpenWrt And AlphaMod OS ONLY - $(THEME_TITLE)
   URL:=http://facebook.com/derisamedia/
   PKGARCH:=all
 endef
