@@ -1,25 +1,87 @@
 <%+header%>
+<%-
+    local message = message or ""
+    local success = success or false
+-%>
 
-<h2>Alpha Custom Background</h2>
-<p>Upload 1 image OR paste image URL. It will overwrite <code>dashboard.png</code> & <code>login.png</code>.</p>
+<style>
+.card {
+    background: #1b1b1b;
+    padding: 20px;
+    border-radius: 12px;
+    color: #fff;
+    width: 390px;
+    margin: auto;
+    text-align: center;
+}
+button, input {
+    margin-top: 10px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+}
+button {
+    cursor: pointer;
+    background: #3b82f6;
+    color: white;
+    font-weight: bold;
+}
+button:hover {
+    background: #2563eb;
+}
+input[type="text"], input[type="file"] {
+    background: #2b2b2b;
+    color: #fff;
+    border: 1px solid #444;
+}
+.msg {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.ok {background:#065f46;}
+.err{background:#7f1d1d;}
+</style>
 
-<% if message then %>
-    <div style="padding:10px;background:#ddd;border-radius:5px;margin-bottom:10px;">
-        <%=message%>
-    </div>
-<% end %>
+<div class="card">
+    <h2>🎨 Custom Background</h2>
+    <p>Theme Alpha</p>
 
-<form method="post" enctype="multipart/form-data">
-    <label>Upload File:</label><br>
-    <input type="file" name="file"><br><br>
+    <% if message and #message > 1 then %>
+        <div class="msg <%= success and 'ok' or 'err' %>">
+            <%= message %>
+        </div>
+    <% end %>
 
-    <label>Or Image URL:</label><br>
-    <input type="text" name="image_url" placeholder="https://example.com/image.jpg" style="width:100%;"><br><br>
+    <hr style="opacity:.2;margin:15px 0;">
 
-    <button type="submit" name="upload" value="1" class="cbi-button cbi-button-apply">Apply</button>
-</form>
+    <!-- UPLOAD FILE -->
+    <form method="post" enctype="multipart/form-data">
+        <label><b>📁 Upload Local Image</b></label>
+        <input type="file" name="file" accept=".png,.jpg,.jpeg,.webp" required />
+        <button type="submit" name="upload">Upload</button>
+    </form>
 
-<hr>
-<h3>Preview Current Background</h3>
-<img src="/luci-static/alpha/background/dashboard.png" style="max-width:300px;border:1px solid #ccc;">
+    <hr style="opacity:.2;margin:15px 0;">
+
+    <!-- APPLY FROM URL -->
+    <form method="post">
+        <label><b>🌍 Import image URL</b></label>
+        <input type="text" name="image_url" placeholder=" https://....jpg" />
+        <button type="submit" name="apply_url">Apply From URL</button>
+    </form>
+
+    <hr style="opacity:.2;margin:15px 0;">
+
+    <!-- RANDOM WALLPAPER -->
+    <form method="post">
+        <button style="background:#22c55e;" type="submit" name="randomize">
+            🎲 Random Wallpaper(wallhaven)
+        </button>
+    </form>
+</div>
+
 <%+footer%>
