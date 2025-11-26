@@ -85,7 +85,17 @@ input[type="text"], input[type="file"] {
 </div>
 
     <h3>Preview Current Background</h3>
-        
-<img src="/luci-static/alpha/background/dashboard.png" style="max-width:250px;border:2px solid #ccc;">
+<style>
+#previewImg { 
+   opacity:0; 
+   transition:opacity .5s;
+}
+</style>
 
+<img id="previewImg" style="max-width:250px;border:2px solid #ccc;">
+<script>
+let img = document.getElementById("previewImg");
+img.src = "/luci-static/alpha/background/dashboard.png?t=" + Date.now();
+img.onload = () => img.style.opacity = 1;
+</script>
 <%+footer%>
